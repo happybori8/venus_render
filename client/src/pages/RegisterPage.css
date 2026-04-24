@@ -3,14 +3,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background:
-    radial-gradient(980px 460px at 50% -140px, rgba(120, 120, 120, 0.12), transparent 70%),
-    #f7f7f7;
+  background: var(--page-bg);
   padding: 2rem 1rem;
 }
 
 .register-card {
-  background: white;
+  background: var(--surface-base);
   border: 1px solid #ececec;
   border-radius: 20px;
   padding: 2.5rem 2rem;

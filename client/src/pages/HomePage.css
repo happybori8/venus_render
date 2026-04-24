@@ -2,10 +2,8 @@
 
 .landing {
   min-height: 100vh;
-  background:
-    radial-gradient(1200px 520px at 50% -180px, rgba(120, 120, 120, 0.11), transparent 70%),
-    #fff;
-  color: #111;
+  background: var(--page-bg);
+  color: var(--text-body);
 }
 
 /* Header */
@@ -42,7 +40,7 @@
   font-size: 0.8125rem;
   font-weight: 400;
   letter-spacing: 0.02em;
-  color: #333;
+  color: var(--text-body);
   transition: color 0.2s, background-color 0.2s;
 }
 
@@ -51,27 +49,56 @@
 }
 
 .landing-nav-link.is-active {
-  color: #111;
+  color: var(--text-primary);
   font-weight: 500;
 }
 
 .landing-logo {
   justify-self: center;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
   background: none;
   border: none;
-  padding: 0.25rem 0;
-  color: #111;
-  font-size: 2.43rem;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
+  padding: 0;
   line-height: 1;
 }
 
+.landing-logo-img {
+  width: clamp(38px, 5vw, 52px);
+  height: auto;
+  display: block;
+  margin-top: 0;
+  background: #fff;
+}
+
+.landing-brand-name {
+  font-family: 'Chonburi', Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.575rem, 2.85vw, 2.025rem);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--text-primary);
+}
+
+.landing-brand-wordmark {
+  width: clamp(104px, 13vw, 142px);
+  height: auto;
+  display: block;
+}
+
 @media (max-width: 480px) {
-  .landing-logo {
-    font-size: 1.98rem;
-    letter-spacing: 0.18em;
+  .landing-logo-img {
+    width: clamp(32px, 10vw, 40px);
+    margin-top: 0;
+  }
+
+  .landing-brand-name {
+    font-size: 1.425rem;
+    letter-spacing: 0.1em;
+  }
+
+  .landing-brand-wordmark {
+    width: clamp(86px, 28vw, 118px);
   }
 }
 
@@ -92,12 +119,12 @@
   border: none;
   padding: 0.35rem 0.5rem;
   font-size: inherit;
-  color: #333;
+  color: var(--text-body);
   transition: color 0.2s, background-color 0.2s, transform 0.15s;
 }
 
 .landing-cart-btn:hover {
-  color: #111;
+  color: var(--text-primary);
   background: #f5f5f5;
 }
 
@@ -135,7 +162,7 @@
 }
 
 .landing-greeting {
-  color: #444;
+  color: var(--text-muted);
   margin-right: 0.25rem;
   max-width: 220px;
   white-space: nowrap;
@@ -145,7 +172,7 @@
 
 .landing-greeting-name {
   font-weight: 600;
-  color: #111;
+  color: var(--text-primary);
 }
 
 .landing-auth-btn {
@@ -153,7 +180,7 @@
   border: none;
   padding: 0.35rem 0.25rem;
   font-size: inherit;
-  color: #333;
+  color: var(--text-body);
   transition: color 0.2s, background-color 0.2s;
 }
 
@@ -175,7 +202,7 @@
 
 .landing-auth-admin {
   font-weight: 600;
-  color: #111;
+  color: var(--text-primary);
 }
 
 .landing-auth-admin:hover {
@@ -214,14 +241,14 @@
   letter-spacing: -0.02em;
   line-height: 1.25;
   margin-bottom: 0.9rem;
-  color: #242424;
+  color: var(--text-primary);
   text-wrap: balance;
 }
 
 .landing-hero-desc {
   font-size: 0.95rem;
   font-weight: 400;
-  color: #5b5b5b;
+  color: var(--text-muted);
   max-width: 34rem;
   margin: 0 auto 2.1rem;
   line-height: 1.7;
@@ -279,7 +306,7 @@
   letter-spacing: -0.02em;
   line-height: 1.3;
   text-align: center;
-  color: #2d2d2d;
+  color: var(--text-primary);
   margin-bottom: 2.1rem;
 }
 
@@ -327,14 +354,14 @@
 .landing-product-name {
   font-size: 0.875rem;
   font-weight: 400;
-  color: #333;
+  color: var(--text-body);
   margin-bottom: 0.35rem;
   line-height: 1.45;
 }
 
 .landing-product-price {
   font-size: 0.8125rem;
-  color: #666;
+  color: var(--text-muted);
 }
 
 .landing-maskpack-loading,

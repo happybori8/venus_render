@@ -2,10 +2,20 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 @import "@fontsource-variable/geist";
+@import "@fontsource/chonburi";
 
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  --page-bg:
+    radial-gradient(860px 340px at 50% -120px, rgba(255, 242, 226, 0.22), transparent 72%),
+    linear-gradient(180deg, #fefdfb 0%, #fbf8f3 100%);
+  --surface-base: #fffefc;
+  --surface-soft: #fdfaf5;
+  --text-primary: #1c1a18;
+  --text-body: #2f2b27;
+  --text-muted: #5c554d;
+  --text-subtle: #7a7066;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -96,14 +106,23 @@
   body {
     font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background-color: var(--background);
-    color: var(--foreground);
+    color: var(--text-body);
     line-height: 1.6;
+    background: var(--page-bg);
     @apply bg-background text-foreground;
   }
 
   a {
     text-decoration: none;
     color: inherit;
+  }
+
+  h1, h2, h3, h4, h5, h6, strong {
+    color: var(--text-primary);
+  }
+
+  small, .text-muted, .muted, .subtle {
+    color: var(--text-muted);
   }
 
   button {

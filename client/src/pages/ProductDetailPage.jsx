@@ -149,8 +149,6 @@ export default function ProductDetailPage() {
   const isSoldOut = stock != null && stock <= 0;
   const maxSelectableQty = stock == null ? 99 : Math.max(1, stock);
   const mainSrc = gallery[selectedImg] ?? gallery[0] ?? 'https://placehold.co/800x800?text=No+Image';
-  const shipProgress = Math.min(100, Math.round((displayPrice * qty / 50000) * 100));
-  const untilFree = Math.max(0, 50000 - displayPrice * qty);
 
   return layout(
     <div className="product-detail-page pd-page">
@@ -203,21 +201,6 @@ export default function ProductDetailPage() {
             </div>
             {displayDescription ? <p className="detail-description pd-lead">{displayDescription}</p> : null}
 
-            <div className="pd-free-ship-bar" aria-hidden={untilFree <= 0}>
-              {untilFree > 0 ? (
-                <>
-                  <div className="pd-free-ship-track">
-                    <div className="pd-free-ship-fill" style={{ width: `${shipProgress}%` }} />
-                  </div>
-                  <p className="pd-free-ship-text">
-                    {untilFree.toLocaleString()}원 더 구매 시 무료배송
-                  </p>
-                </>
-              ) : (
-                <p className="pd-free-ship-done">무료배송 조건을 충족했습니다</p>
-              )}
-            </div>
-
             <p className="pd-total-line">
               총 상품 금액 <strong>{(displayPrice * qty).toLocaleString()}원</strong>
               <span className="pd-total-qty"> ({qty}개)</span>
@@ -249,10 +232,6 @@ export default function ProductDetailPage() {
                 </div>
               </>
             )}
-            <div className="shipping-info pd-ship-note">
-              <p>{displayPrice * qty >= 50000 ? '무료 배송' : '배송비 3,000원 · 5만 원 이상 무료배송'}</p>
-              <p>주문 후 1~3일 내 출고</p>
-            </div>
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 .orders-page {
   padding: 2rem 0 4rem;
-  background: linear-gradient(180deg, #fff 0%, #fcfcfc 100%);
+  background: var(--page-bg);
 }
 .orders-list { display: flex; flex-direction: column; gap: 1.25rem; }
 .order-card {
@@ -8,7 +8,7 @@
   border: 1px solid #ececec;
   border-radius: 1rem;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05);
-  background: #fff;
+  background: var(--surface-base);
 }
 .order-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid #efefef; }
 .order-id { font-size: 0.85rem; font-weight: 600; color: var(--gray-700); margin-right: 0.75rem; }

@@ -1,13 +1,17 @@
 .products-page {
-  padding: 2.25rem 0 4rem;
-  background: #fff;
+  padding: 0 0 4rem;
+  background: var(--page-bg);
+}
+
+.products-page > .container {
+  padding-top: 2.25rem;
 }
 
 .products-page-heading {
   font-size: clamp(1.2rem, 2.6vw, 1.55rem);
   font-weight: 400;
   letter-spacing: -0.03em;
-  color: #1a1a1a;
+  color: var(--text-primary);
   text-align: center;
   margin: 0 0 2.75rem;
   line-height: 1.35;
@@ -69,7 +73,7 @@
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #888;
+  color: var(--text-subtle);
 }
 
 .products-filter-reset {
@@ -97,15 +101,18 @@
 }
 
 .filter-chip {
-  display: block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
   width: 100%;
   text-align: left;
   padding: 0.7rem 0.9rem;
   font-size: 0.8125rem;
   font-weight: 400;
+  line-height: 1.2;
   letter-spacing: 0.01em;
-  color: #444;
-  background: #fafafa;
+  color: var(--text-body);
+  background: transparent;
   border: 1px solid #ebebeb;
   border-radius: 2px;
   cursor: pointer;
@@ -114,8 +121,8 @@
 
 .filter-chip:hover {
   border-color: #ccc;
-  background: #fff;
-  color: #111;
+  background: var(--surface-soft);
+  color: var(--text-primary);
 }
 
 .filter-chip.is-active {
@@ -174,15 +181,15 @@
   border: 1px solid #e5e5e5;
   border-radius: 2px;
   font-size: 0.8125rem;
-  background: #fff;
-  color: #444;
+  background: var(--surface-base);
+  color: var(--text-body);
   cursor: pointer;
   outline: none;
 }
 
 .result-count {
   font-size: 0.8125rem;
-  color: #888;
+  color: var(--text-muted);
   margin-bottom: 1.35rem;
   letter-spacing: 0.02em;
 }
@@ -199,9 +206,9 @@
   height: 36px;
   padding: 0 0.5rem;
   border-radius: 2px;
-  background: #fff;
+  background: var(--surface-base);
   border: 1px solid #e5e5e5;
-  color: #555;
+  color: var(--text-muted);
   font-size: 0.8125rem;
   font-weight: 500;
   transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
@@ -209,7 +216,7 @@
 
 .page-btn:hover {
   border-color: #111;
-  color: #111;
+  color: var(--text-primary);
 }
 
 .page-btn.active {

@@ -16,8 +16,8 @@ export default function LandingProductCard({ product, detailId }) {
   )
   const priceLine = product.priceKo ?? product.priceDisplay
   return (
-    <Card className="landing-product-card overflow-hidden rounded-2xl border border-border/70 bg-card py-0 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-      <div className="landing-product-img-wrap mb-0 bg-muted/50">
+    <Card className="landing-product-card overflow-hidden rounded-2xl border border-[#d8dee6] bg-transparent py-0 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+      <div className="landing-product-img-wrap mb-0 bg-[#e9eef4]">
         {toId ? (
           <Link
             to={`/products/${toId}`}
@@ -30,7 +30,7 @@ export default function LandingProductCard({ product, detailId }) {
           img
         )}
       </div>
-      <CardContent className="space-y-1.5 p-4 text-left">
+      <CardContent className="space-y-1.5 border-t border-[#d8dee6] bg-[#f6f8fb] p-4 text-left">
         <h3 className="landing-product-name line-clamp-2 min-h-11 text-sm font-semibold text-foreground">{displayName}</h3>
         <p className="landing-product-price text-sm text-muted-foreground">{priceLine}</p>
       </CardContent>

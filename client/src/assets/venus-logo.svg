@@ -1,0 +1,23 @@
+<svg width="292" height="84" viewBox="0 0 292 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ring" x1="9" y1="7" x2="77" y2="75" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D7B46A"/>
+      <stop offset="1" stop-color="#B78E44"/>
+    </linearGradient>
+    <linearGradient id="violet" x1="22" y1="20" x2="66" y2="68" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7E1E89"/>
+      <stop offset="1" stop-color="#4B0D62"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="43" cy="41" r="33.2" fill="#FAF8F3" stroke="url(#ring)" stroke-width="3"/>
+
+  <!-- Clear, readable calligraphic V -->
+  <path d="M22 20C28 33 33 47 41 67" stroke="url(#violet)" stroke-width="7.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M60 20C52 36 47 51 41 67" stroke="url(#violet)" stroke-width="7.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- subtle flourish -->
+  <path d="M58.5 24C62 21.5 65 19 68 15.5" stroke="url(#violet)" stroke-width="2.8" stroke-linecap="round"/>
+  <circle cx="69.8" cy="14.4" r="1.8" fill="#6D1681"/>
+
+  <text x="88" y="48" fill="#1D1916" font-family="Georgia, 'Times New Roman', serif" font-size="37" font-weight="600" letter-spacing="0.12em">VENUS</text>
+</svg>

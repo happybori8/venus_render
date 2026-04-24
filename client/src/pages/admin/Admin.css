@@ -1,10 +1,8 @@
 .admin-app {
   min-height: 100vh;
   display: flex;
-  background:
-    radial-gradient(1000px 420px at 50% -180px, rgba(120, 120, 120, 0.08), transparent 70%),
-    #f5f6f8;
-  color: #111827;
+  background: var(--page-bg);
+  color: var(--text-body);
 }
 
 .admin-sidebar {
@@ -90,11 +88,12 @@
 .admin-page-title {
   font-size: 1.5rem;
   font-weight: 700;
+  color: var(--text-primary);
   margin-bottom: 1.25rem;
 }
 
 .admin-card {
-  background: #fff;
+  background: var(--surface-base);
   border: 1px solid #ececec;
   border-radius: 16px;
   padding: 1.25rem 1.5rem;
@@ -110,7 +109,7 @@
 }
 
 .admin-stat {
-  background: #fff;
+  background: var(--surface-base);
   border: 1px solid #ececec;
   border-radius: 16px;
   padding: 1.25rem;
@@ -120,12 +119,12 @@
 .admin-stat-value {
   font-size: 1.75rem;
   font-weight: 700;
-  color: #111;
+  color: var(--text-primary);
 }
 
 .admin-stat-label {
   font-size: 0.8125rem;
-  color: #6b7280;
+  color: var(--text-muted);
   margin-top: 0.35rem;
 }
 
@@ -203,7 +202,7 @@
   height: 36px;
   padding: 0 0.5rem;
   border-radius: 999px;
-  background: #fff;
+  background: var(--surface-base);
   border: 1px solid #e5e7eb;
   color: #374151;
   font-size: 0.875rem;

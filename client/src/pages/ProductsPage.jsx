@@ -111,7 +111,7 @@ export default function ProductsPage() {
   };
 
   return (
-    <div className="landing products-page bg-gradient-to-b from-background to-muted/20">
+    <div className="landing products-page">
       <LandingNavbar user={user} isLoggedIn={isLoggedIn} isAdmin={isAdmin} onLogout={handleLogout} />
       <div className="container">
         <h1 className="products-page-heading text-balance">{t('products_page_title')}</h1>

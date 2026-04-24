@@ -4,6 +4,8 @@ import { t } from '../../i18n/t'
 import useCartStore from '../../store/cartStore'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
+import venusLogo from '../../assets/venus-logo.png'
+import venusWordmark from '../../assets/venus-wordmark.png'
 
 export default function LandingNavbar({ user, isLoggedIn, isAdmin, onLogout }) {
   const navigate = useNavigate()
@@ -48,7 +50,8 @@ export default function LandingNavbar({ user, isLoggedIn, isAdmin, onLogout }) {
           onClick={() => navigate('/')}
           aria-label={t('logo_aria')}
         >
-          Venus
+          <img src={venusLogo} alt="Venus" className="landing-logo-img" />
+          <img src={venusWordmark} alt="Venus wordmark" className="landing-brand-wordmark" />
         </button>
 
         <div className="landing-nav-right">

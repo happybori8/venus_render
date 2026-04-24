@@ -2,7 +2,7 @@
 
 .checkout-landing .co-main {
   padding: 0 0 4.4rem;
-  background: linear-gradient(180deg, #fff 0%, #fcfcfc 100%);
+  background: var(--page-bg);
 }
 
 .co-container {
@@ -56,7 +56,7 @@
   border-top: 1px solid #eee;
   border-radius: 1rem;
   overflow: hidden;
-  background: #fff;
+  background: var(--surface-base);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05);
 }
 
@@ -344,7 +344,7 @@
   padding: 1.5rem;
   border: 1px solid #e9e9e9;
   border-radius: 1rem;
-  background: #fff;
+  background: var(--surface-base);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
 }
 
