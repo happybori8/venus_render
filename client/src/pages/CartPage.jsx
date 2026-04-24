@@ -1,5 +1,5 @@
-import { useState, useEffect, useMemo } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import useCartStore from '../store/cartStore';
 import useAuthStore from '../store/authStore';
 import { getStoredUser } from '../utils/authStorage';
@@ -22,23 +22,11 @@ export default function CartPage() {
   const removeItemsByIds = useCartStore((s) => s.removeItemsByIds);
   const logoutStore = useAuthStore((s) => s.logout);
   const navigate = useNavigate();
-  const location = useLocation();
-  const [user, setUser] = useState(getStoredUser);
-  const [selectedIds, setSelectedIds] = useState([]);
-
-  const idsKey = useMemo(() => items.map((i) => i._id).join(','), [items]);
-
-  useEffect(() => {
-    setUser(getStoredUser());
-  }, [location.pathname]);
-
-  useEffect(() => {
-    setSelectedIds(items.map((i) => i._id));
-  }, [idsKey]);
+  const user = getStoredUser();
+  const [selectedIds, setSelectedIds] = useState(() => items.map((i) => i._id));
 
   const handleLogout = () => {
     logoutStore();
-    setUser(null);
     navigate('/');
   };
 

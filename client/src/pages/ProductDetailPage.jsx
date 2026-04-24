@@ -89,7 +89,7 @@ export default function ProductDetailPage() {
       }
     };
     fetch();
-  }, [id]);
+  }, [id, navigate]);
 
   const handleAddToCart = () => {
     addItem(product, qty);

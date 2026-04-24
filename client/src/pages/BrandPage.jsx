@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useNavigate, useLocation } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import useAuthStore from '../store/authStore'
 import { getStoredUser } from '../utils/authStorage'
 import { t } from '../i18n/t'
@@ -11,13 +11,8 @@ import './BrandPage.css'
 
 export default function BrandPage() {
   const navigate = useNavigate()
-  const location = useLocation()
   const logoutStore = useAuthStore((s) => s.logout)
-  const [user, setUser] = useState(getStoredUser)
-
-  useEffect(() => {
-    setUser(getStoredUser())
-  }, [location.pathname])
+  const user = getStoredUser()
 
   useEffect(() => {
     document.title = `Venus — ${t('brand_meta_title')}`
@@ -25,7 +20,6 @@ export default function BrandPage() {
 
   const handleLogout = () => {
     logoutStore()
-    setUser(null)
     navigate('/')
   }
 

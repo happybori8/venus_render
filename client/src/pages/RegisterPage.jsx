@@ -72,7 +72,8 @@ export default function RegisterPage() {
 
     setLoading(true)
     try {
-      const { confirmPassword, ...submitData } = form
+      const submitData = { ...form }
+      delete submitData.confirmPassword
       const { data } = await registerAPI(submitData)
 
       localStorage.setItem('token', data.token)

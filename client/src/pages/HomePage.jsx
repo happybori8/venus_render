@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react'
-import { useNavigate, useLocation } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import useAuthStore from '../store/authStore'
 import { getStoredUser } from '../utils/authStorage'
 import { IMG } from '../data/landingContent'
@@ -13,17 +12,11 @@ import './HomePage.css'
 
 export default function HomePage() {
   const navigate = useNavigate()
-  const location = useLocation()
   const logoutStore = useAuthStore((s) => s.logout)
-  const [user, setUser] = useState(getStoredUser)
-
-  useEffect(() => {
-    setUser(getStoredUser())
-  }, [location.pathname])
+  const user = getStoredUser()
 
   const handleLogout = () => {
     logoutStore()
-    setUser(null)
     navigate('/')
   }
 

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import { createOrderAPI } from '../api/orders';
 import useCartStore from '../store/cartStore';
@@ -17,7 +17,7 @@ export default function PaymentCallbackPage() {
   const navigate = useNavigate();
   const clearCart = useCartStore((s) => s.clearCart);
   const removeItemsByIds = useCartStore((s) => s.removeItemsByIds);
-  const [hint, setHint] = useState('결제 결과를 확인하는 중…');
+  const hint = '결제 결과를 확인하는 중…';
 
   useEffect(() => {
     const paymentId = searchParams.get('paymentId');
@@ -49,7 +49,6 @@ export default function PaymentCallbackPage() {
 
     const rawPeek = peekPortOnePendingPayload(paymentId);
     if (!rawPeek) {
-      setHint('주문 정보가 없습니다. 장바구니에서 다시 결제해 주세요.');
       navigate('/order-fail', {
         replace: true,
         state: {
