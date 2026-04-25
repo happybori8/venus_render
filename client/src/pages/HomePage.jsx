@@ -33,8 +33,8 @@ export default function HomePage() {
         <LandingCategoryProductGrid category="마스크팩" titleKey="section_new" emptyKey="landing_maskpack_empty" />
         <LandingFullBanner src={IMG.banner1} />
         <LandingCategoryProductGrid category="클렌저" titleKey="section_best" emptyKey="landing_cleanser_empty" />
-        <LandingFullBanner src={IMG.banner2} tall />
         <LandingCategoryProductGrid category="크림" titleKey="section_cream" emptyKey="landing_cream_empty" />
+        <LandingFullBanner src={IMG.banner2} tall />
       </main>
 
       <LandingFooter />

@@ -5,13 +5,8 @@ import { IMG } from '../../data/landingContent'
 import { getProductsAPI } from '../../api/products'
 import { getProductName, getProductDescription } from '../../utils/productLocale'
 
-/** 히어로 비주얼 — SKU cr-1 상품 (미등록 시 기본 이미지·문구) */
-const HERO_SKU = 'cr-1'
-
-function findProductBySku(products, sku) {
-  const want = String(sku).trim().toLowerCase()
-  return (products || []).find((p) => String(p.sku || '').trim().toLowerCase() === want)
-}
+/** 히어로 비주얼 — 크림 카테고리 중 가장 최근 등록된 상품 1건 (없으면 기본 이미지·문구) */
+const HERO_CATEGORY = '크림'
 
 /** 설명 한 덩어리로 정리 후 길이 제한 */
 function truncateText(s, max) {
@@ -32,13 +27,14 @@ export default function LandingHero() {
     ;(async () => {
       try {
         const { data } = await getProductsAPI({
-          skuPrefix: 'cr-',
-          limit: 100,
+          category: HERO_CATEGORY,
+          limit: 1,
           page: 1,
           sort: 'newest',
         })
-        const p = findProductBySku(data.products || [], HERO_SKU)
-        if (!cancelled) setHeroProduct(p ?? null)
+        const list = data.products || []
+        const p = list[0] ?? null
+        if (!cancelled) setHeroProduct(p)
       } catch {
         if (!cancelled) setHeroProduct(null)
       } finally {
@@ -53,23 +49,16 @@ export default function LandingHero() {
   const imgSrc = heroProduct?.images?.[0] || IMG.hero
   const detailId = heroProduct?._id
 
-  const kicker = heroProduct
-    ? heroProduct.category === '크림'
-      ? t('hero_kicker')
-      : heroProduct.category || '추천'
-    : t('hero_kicker')
+  const kicker = t('hero_kicker')
 
-  const title = heroProduct ? getProductName(heroProduct)?.trim() || HERO_SKU : t('hero_title')
+  const title = heroProduct ? getProductName(heroProduct)?.trim() || heroProduct.sku || t('hero_title') : t('hero_title')
 
   const desc = heroProduct
     ? (() => {
         const snippet = truncateText(getProductDescription(heroProduct), 160)
         if (snippet) return snippet
         const price = Number(heroProduct.price ?? 0)
-        const priceStr = `${price.toLocaleString('ko-KR')}원`
-        if (heroProduct.category === '크림') return priceStr
-        const cat = heroProduct.category || ''
-        return cat ? `${priceStr} · ${cat}` : priceStr
+        return `${price.toLocaleString('ko-KR')}원`
       })()
     : t('hero_desc')
 
@@ -96,7 +85,7 @@ export default function LandingHero() {
           <Link
             to={`/products/${detailId}`}
             className="landing-hero-img-link"
-            aria-label={heroProduct ? getProductName(heroProduct) || HERO_SKU : HERO_SKU}
+            aria-label={heroProduct ? getProductName(heroProduct) || heroProduct.sku || '상품 상세' : t('hero_title')}
           >
             {visual}
           </Link>
