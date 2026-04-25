@@ -93,7 +93,7 @@ export default function LoginPage() {
 
         {errors.server && <div className="msg-error">{errors.server}</div>}
 
-        <form onSubmit={handleSubmit} noValidate>
+        <form onSubmit={handleSubmit} noValidate autoComplete="off">
           <div className="form-group">
             <label htmlFor="email">
               이메일 <span className="required">*</span>
@@ -105,6 +105,8 @@ export default function LoginPage() {
               value={form.email}
               onChange={handleChange}
               placeholder="example@email.com"
+              autoComplete="off"
+              data-lpignore="true"
             />
             {errors.email && <span className="error">{errors.email}</span>}
           </div>
@@ -120,6 +122,8 @@ export default function LoginPage() {
               value={form.password}
               onChange={handleChange}
               placeholder="비밀번호를 입력하세요"
+              autoComplete="new-password"
+              data-lpignore="true"
             />
             {errors.password && <span className="error">{errors.password}</span>}
           </div>
