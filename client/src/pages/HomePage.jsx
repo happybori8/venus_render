@@ -4,8 +4,7 @@ import { getStoredUser } from '../utils/authStorage'
 import { IMG } from '../data/landingContent'
 import LandingNavbar from '../components/landing/LandingNavbar'
 import LandingHero from '../components/landing/LandingHero'
-import LandingMaskPackGrid from '../components/landing/LandingMaskPackGrid'
-import LandingCleanserGrid from '../components/landing/LandingCleanserGrid'
+import LandingCategoryProductGrid from '../components/landing/LandingCategoryProductGrid'
 import LandingFullBanner from '../components/landing/LandingFullBanner'
 import LandingFooter from '../components/landing/LandingFooter'
 import './HomePage.css'
@@ -31,10 +30,11 @@ export default function HomePage() {
 
       <main>
         <LandingHero />
-        <LandingMaskPackGrid />
+        <LandingCategoryProductGrid category="마스크팩" titleKey="section_new" emptyKey="landing_maskpack_empty" />
         <LandingFullBanner src={IMG.banner1} />
-        <LandingCleanserGrid />
+        <LandingCategoryProductGrid category="클렌저" titleKey="section_best" emptyKey="landing_cleanser_empty" />
         <LandingFullBanner src={IMG.banner2} tall />
+        <LandingCategoryProductGrid category="크림" titleKey="section_cream" emptyKey="landing_cream_empty" />
       </main>
 
       <LandingFooter />

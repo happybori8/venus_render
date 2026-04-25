@@ -17,7 +17,7 @@
   line-height: 1.35;
 }
 
-/* 메인 마스크팩(m-1 등)과 동일한 카드·이미지 크기 — HomePage `.landing-product-grid` 사용 */
+/* 메인 랜딩과 동일한 카드·이미지 크기 — HomePage `.landing-product-grid` 사용 */
 .products-page .landing-product-grid.products-page-product-grid {
   max-width: 100%;
 }

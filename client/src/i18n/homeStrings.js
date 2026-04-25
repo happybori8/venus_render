@@ -18,6 +18,7 @@ export const STRINGS = {
   hero_desc: '순한 성분과 미니멀한 포뮬러로 매일의 루틴을 완성하세요.',
   section_new: '마스크팩',
   section_best: '클렌저',
+  section_cream: '크림',
   footer_brand: 'Venus',
   footer_company:
     '상호: (주)비너스 대표: 관리자\n사업자등록번호: 123-45-67890 통신판매업: 제2024-서울강남-0000호\n주소: 서울특별시 강남구 테헤란로 123, 10층 (역삼동)\n고객센터: 1588-0000 (평일 10:00–17:00) 이메일: help@venus.com',
@@ -107,8 +108,7 @@ export const STRINGS = {
   cart_toast_login: '로그인이 필요합니다',
   cart_toast_select_order: '주문할 상품을 선택해 주세요',
   landing_loading: '불러오는 중…',
-  landing_maskpack_empty:
-    '등록된 마스크팩 상품이 없습니다. (SKU m-1, m-2, m-3 상품을 등록해 주세요)',
-  landing_cleanser_empty:
-    '등록된 클렌저 상품이 없습니다. (SKU c-1, c-2 상품을 등록해 주세요)',
+  landing_maskpack_empty: '등록된 마스크팩 상품이 없습니다. 관리자에서 마스크팩 카테고리로 상품을 등록해 주세요.',
+  landing_cleanser_empty: '등록된 클렌저 상품이 없습니다. 관리자에서 클렌저 카테고리로 상품을 등록해 주세요.',
+  landing_cream_empty: '등록된 크림 상품이 없습니다. 관리자에서 크림 카테고리로 상품을 등록해 주세요.',
 }
