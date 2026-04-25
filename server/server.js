@@ -13,6 +13,7 @@ const productRoutes = require('./routes/productRoutes');
 const orderRoutes = require('./routes/orderRoutes');
 const userRoutes = require('./routes/userRoutes');
 const cloudinaryRoutes = require('./routes/cloudinaryRoutes');
+const cartRoutes = require('./routes/cartRoutes');
 
 const app = express();
 
@@ -39,6 +40,7 @@ app.use('/api/products', productRoutes);
 app.use('/api/orders', orderRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/cloudinary', cloudinaryRoutes);
+app.use('/api/cart', cartRoutes);
 
 app.get('/', (req, res) => {
   res.json({
@@ -50,6 +52,7 @@ app.get('/', (req, res) => {
       orders: '/api/orders',
       users: '/api/users',
       cloudinary: '/api/cloudinary',
+      cart: '/api/cart',
     },
   });
 });

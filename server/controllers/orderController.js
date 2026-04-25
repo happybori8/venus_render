@@ -1,4 +1,5 @@
 const Order = require('../models/Order');
+const Cart = require('../models/Cart');
 
 async function getPortOneAccessToken() {
   const secret = process.env.PORTONE_API_SECRET;
@@ -74,6 +75,13 @@ exports.createOrder = async (req, res, next) => {
       paidAt: new Date(),
       status: '결제완료',
     });
+
+    // 결제 완료된 주문은 서버 장바구니에서도 제거되어 다른 기기와 즉시 동기화됨
+    await Cart.findOneAndUpdate(
+      { user: req.user._id },
+      { $set: { items: [] } },
+      { upsert: true, setDefaultsOnInsert: true }
+    );
 
     res.status(201).json({ success: true, order });
   } catch (error) {
